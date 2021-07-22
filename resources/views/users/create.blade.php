@@ -3,7 +3,7 @@
 @section('content')
     <div class="flex">
         <div class="w-full">
-            <home-component />
+            <user-create />
         </div>
     </div>
 @endsection
