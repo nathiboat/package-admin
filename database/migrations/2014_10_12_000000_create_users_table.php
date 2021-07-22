@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name')->default('');
             $table->tinyInteger('enabled')->nullable(false)->default(1);
-            $table->tinyInteger('is_admin');
+            $table->tinyInteger('is_admin')->nullable(false)->default(0);
             $table->unsignedInteger('purchased_credits')->nullable(false)->default(0);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
