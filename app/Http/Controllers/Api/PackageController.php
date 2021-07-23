@@ -10,6 +10,17 @@ use Illuminate\Http\Request;
 class PackageController extends Controller
 {
 
+    /**
+     * Display a listing of the package.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $package = Package::latest()->paginate(5);
+
+        return $package->toJson();
+    }
      /**
      * Created pacnage page.
      *
