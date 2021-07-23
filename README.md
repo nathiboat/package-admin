@@ -17,6 +17,11 @@ $ composer install
 # do migration and seed all data 
 $ php artisan migrate:fresh --seed
 
+# At this point the admin and password access will be added to the database and we can use this to access to the application.
+# email: admin@example.com 
+# password: password 
+
+
 # install js dependencies locally
 $ npm install
 

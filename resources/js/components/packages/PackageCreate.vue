@@ -49,14 +49,13 @@
             />
           </div>
           <div>
-            <label for="email-address" class="sr-only">Email address</label>
+            <label for="des" class="sr-only">Description</label>
             <input
-              id="email-address"
-              name="email"
-              type="email"
-              autocomplete="email"
+              id="des"
+              name="des"
+              type="text"
               required
-              v-model="form.email"
+              v-model="form.des"
               class="
                 appearance-none
                 rounded-none
@@ -75,7 +74,67 @@
                 focus:z-10
                 sm:text-sm
               "
-              placeholder="Email address"
+              placeholder="Description"
+            />
+          </div>
+
+          <div>
+            <label for="des" >Commitment period</label>
+            <input
+              id="commitment_period"
+              name="commitment_period"
+              type="text"
+              required
+              v-model="form.commitment_period"
+              class="
+                appearance-none
+                rounded-none
+                relative
+                block
+                w-full
+                px-3
+                py-2
+                border border-gray-300
+                placeholder-gray-500
+                text-gray-900
+                rounded-t-md
+                focus:outline-none
+                focus:ring-indigo-500
+                focus:border-indigo-500
+                focus:z-10
+                sm:text-sm
+              "
+              placeholder="Commitment period"
+            />
+          </div>
+
+          <div>
+            <label for="des" >Sell litmit</label>
+            <input
+              id="sell_limit"
+              name="sell_limit"
+              type="text"
+              required
+              v-model="form.sell_limit"
+              class="
+                appearance-none
+                rounded-none
+                relative
+                block
+                w-full
+                px-3
+                py-2
+                border border-gray-300
+                placeholder-gray-500
+                text-gray-900
+                rounded-t-md
+                focus:outline-none
+                focus:ring-indigo-500
+                focus:border-indigo-500
+                focus:z-10
+                sm:text-sm
+              "
+              placeholder="Sell litmit"
             />
           </div>
         </div>
@@ -104,7 +163,7 @@
 
         <div>
           <button
-            @click.prevent="createUser"
+            @click.prevent="createPackage"
             type="submit"
             class="
               group
@@ -141,15 +200,17 @@
             return {
                 form:{
                     name: '',
-                    email: '',
-                    enabled: 0
+                    des: '',
+                    commitment_period: 0,
+                    sell_limit: 0
+
                 }
             }
         },
         methods: {
-            async createUser () {
+            async createPackage () {
 
-                await axios.post('/api/users', this.form).then(() => {
+                await axios.post('/api/packages', this.form).then(() => {
                      window.location.href = '/home'
                 }).catch(function (error) {
                     console.log(error)

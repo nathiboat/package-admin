@@ -25,3 +25,11 @@ Route::post('/users', [App\Http\Controllers\Api\UserController::class, 'store'])
 Route::post('/users/update', [App\Http\Controllers\Api\UserController::class, 'update'])->name('users.update');
 
 
+//Store new package
+Route::post('/packages', [App\Http\Controllers\Api\PackageController::class, 'store'])->name('package.store');
+
+Route::post('/packages/update', [App\Http\Controllers\Api\PackageController::class, 'update'])->name('package.update');
+
+
+
+

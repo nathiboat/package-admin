@@ -2164,19 +2164,79 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       form: {
         name: '',
-        email: '',
-        enabled: 0
+        des: '',
+        commitment_period: 0,
+        sell_limit: 0
       }
     };
   },
   methods: {
-    createUser: function createUser() {
+    createPackage: function createPackage() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -2185,7 +2245,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/users', _this.form).then(function () {
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/packages', _this.form).then(function () {
                   window.location.href = '/home';
                 })["catch"](function (error) {
                   console.log(error);
@@ -39154,38 +39214,107 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", [
-                _c(
-                  "label",
-                  { staticClass: "sr-only", attrs: { for: "email-address" } },
-                  [_vm._v("Email address")]
-                ),
+                _c("label", { staticClass: "sr-only", attrs: { for: "des" } }, [
+                  _vm._v("Description")
+                ]),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.form.email,
-                      expression: "form.email"
+                      value: _vm.form.des,
+                      expression: "form.des"
                     }
                   ],
                   staticClass:
                     "\n              appearance-none\n              rounded-none\n              relative\n              block\n              w-full\n              px-3\n              py-2\n              border border-gray-300\n              placeholder-gray-500\n              text-gray-900\n              rounded-t-md\n              focus:outline-none\n              focus:ring-indigo-500\n              focus:border-indigo-500\n              focus:z-10\n              sm:text-sm\n            ",
                   attrs: {
-                    id: "email-address",
-                    name: "email",
-                    type: "email",
-                    autocomplete: "email",
+                    id: "des",
+                    name: "des",
+                    type: "text",
                     required: "",
-                    placeholder: "Email address"
+                    placeholder: "Description"
                   },
-                  domProps: { value: _vm.form.email },
+                  domProps: { value: _vm.form.des },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.form, "email", $event.target.value)
+                      _vm.$set(_vm.form, "des", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("label", { attrs: { for: "des" } }, [
+                  _vm._v("Commitment period")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.commitment_period,
+                      expression: "form.commitment_period"
+                    }
+                  ],
+                  staticClass:
+                    "\n              appearance-none\n              rounded-none\n              relative\n              block\n              w-full\n              px-3\n              py-2\n              border border-gray-300\n              placeholder-gray-500\n              text-gray-900\n              rounded-t-md\n              focus:outline-none\n              focus:ring-indigo-500\n              focus:border-indigo-500\n              focus:z-10\n              sm:text-sm\n            ",
+                  attrs: {
+                    id: "commitment_period",
+                    name: "commitment_period",
+                    type: "text",
+                    required: "",
+                    placeholder: "Commitment period"
+                  },
+                  domProps: { value: _vm.form.commitment_period },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.form,
+                        "commitment_period",
+                        $event.target.value
+                      )
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("label", { attrs: { for: "des" } }, [_vm._v("Sell litmit")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.sell_limit,
+                      expression: "form.sell_limit"
+                    }
+                  ],
+                  staticClass:
+                    "\n              appearance-none\n              rounded-none\n              relative\n              block\n              w-full\n              px-3\n              py-2\n              border border-gray-300\n              placeholder-gray-500\n              text-gray-900\n              rounded-t-md\n              focus:outline-none\n              focus:ring-indigo-500\n              focus:border-indigo-500\n              focus:z-10\n              sm:text-sm\n            ",
+                  attrs: {
+                    id: "sell_limit",
+                    name: "sell_limit",
+                    type: "text",
+                    required: "",
+                    placeholder: "Sell litmit"
+                  },
+                  domProps: { value: _vm.form.sell_limit },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "sell_limit", $event.target.value)
                     }
                   }
                 })
@@ -39262,7 +39391,7 @@ var render = function() {
                   on: {
                     click: function($event) {
                       $event.preventDefault()
-                      return _vm.createUser.apply(null, arguments)
+                      return _vm.createPackage.apply(null, arguments)
                     }
                   }
                 },
